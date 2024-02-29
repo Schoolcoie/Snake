@@ -1,5 +1,7 @@
 #pragma once
 #include "SDL.h"
+#include "Snake.h"
+#include "Apple.h"
 
 class Sprite;
 
@@ -17,7 +19,7 @@ public:
 	void HandleKeys(SDL_Keycode keyCode);
 
 private:
-	Sprite* m_Sprite;
-
+	Snake* m_Snake;
+	Apple* m_Apple;
 };
 

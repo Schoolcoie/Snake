@@ -46,3 +46,13 @@ void Sprite::SetPosition(float x, float y)
 	m_Rect->x = m_Rect->x + x;
 	m_Rect->y = m_Rect->y + y;
 }
+
+float Sprite::GetPositionX()
+{
+	return m_Rect->x;
+}
+
+float Sprite::GetPositionY()
+{
+	return m_Rect->y;
+}

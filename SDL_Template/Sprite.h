@@ -1,5 +1,6 @@
 #pragma once
 #include <SDL_image.h>
+#include <iostream>
 #include <string>
 class Sprite
 {
@@ -12,6 +13,8 @@ public:
 	void Draw(SDL_Renderer* renderer);
 
 	void SetPosition(float x, float y);
+	float GetPositionX();
+	float GetPositionY();
 
 
 private:
