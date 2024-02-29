@@ -10,16 +10,19 @@ using namespace std;
 class Snake
 {
 public:
-    Snake();
+    Snake(SDL_Renderer* graphics);
     ~Snake();
-    void EatApple();
-    void Update();
+    void EatApple(SDL_Renderer* graphics);
     pair<float, float> GetPosition();
+    void SetPosition(float _posx, float _posy);
+    void SetDirection(vector<int> _direction);
+    void Update();
+    void Draw(SDL_Renderer* graphics);
 
 
 private:
-    int m_Direction;
-    float m_Speed;
+    vector<int> m_Direction;
+    float m_Delay;
     vector<Segment*> m_Segments;
     Sprite* m_Sprite;
 };

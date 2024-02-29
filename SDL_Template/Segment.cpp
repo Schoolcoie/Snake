@@ -1,10 +1,12 @@
 #include "Segment.h"
 
-Segment::Segment(int _posx, int _posy, vector<int> _direction)
+Segment::Segment(SDL_Renderer* graphics, int _posx, int _posy, vector<int> _direction)
 	:m_Direction(_direction)
 {
 	m_Sprite = new Sprite(_posx, _posy, 32, 32); // Location of new segment at the end of the other segments
+	m_Sprite->LoadTexture(graphics, "assets/segment.png");
 }
+
 
 Segment::~Segment()
 {
@@ -25,7 +27,11 @@ pair<float, float> Segment::GetPosition()
 	return make_pair(m_Sprite->GetPositionX(), m_Sprite->GetPositionY());
 }
 
-Sprite* Segment::GetSprite()
+void Segment::Update()
 {
-	return m_Sprite;
+}
+
+void Segment::Draw(SDL_Renderer* graphics)
+{
+	m_Sprite->Draw(graphics);
 }

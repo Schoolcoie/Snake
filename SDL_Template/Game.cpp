@@ -12,21 +12,20 @@ Game::~Game()
 
 void Game::Init(SDL_Renderer* graphics)
 {
-	m_Snake = new Snake();
-	m_Apple = new Apple();
-	m_Snake->GetSprite()->LoadTexture(graphics, "assets/snake.png");
-	m_Apple->GetSprite()->LoadTexture(graphics, "assets/apple.png");
+	m_Snake = new Snake(graphics);
+	m_Apple = new Apple(graphics);
 }
 
 void Game::Update()
 {
-
+	m_Snake->Update();
 }
 
 void Game::Draw(SDL_Renderer* graphics)
 {
-	m_Snake->GetSprite()->Draw(graphics);
-	m_Apple->GetSprite()->Draw(graphics);
+	m_Snake->Draw(graphics);
+	m_Apple->Draw(graphics);
+
 }
 
 void Game::HandleKeys(SDL_Keycode keyCode)
@@ -35,19 +34,19 @@ void Game::HandleKeys(SDL_Keycode keyCode)
 	{
 	case SDLK_UP:
 	case SDLK_w:
-		m_Snake->GetSprite()->SetPosition(0, -32);
+		m_Snake->SetDirection({0, -1});
 		break;
 	case SDLK_DOWN:
 	case SDLK_s:
-		m_Snake->GetSprite()->SetPosition(0, 32);
+		m_Snake->SetDirection({0, 1});
 		break;
 	case SDLK_LEFT:
 	case SDLK_a:
-		m_Snake->GetSprite()->SetPosition(-32, 0);
+		m_Snake->SetDirection({-1, 0});
 		break;
 	case SDLK_RIGHT:
 	case SDLK_d:
-		m_Snake->GetSprite()->SetPosition(32, 0);
+		m_Snake->SetDirection({1, 0});
 		break;
 	}
 }

@@ -7,11 +7,12 @@ using namespace std;
 class Segment
 {
 public:
-	Segment(int _posx, int _posy, vector<int> _direction);
+	Segment(SDL_Renderer* graphics, int _posx, int _posy, vector<int> _direction);
 	~Segment();
 	vector<int> GetDirection();
 	pair<float, float> GetPosition();
-	Sprite* GetSprite();
+	void Update();
+	void Draw(SDL_Renderer* graphics);
 
 private:
 	vector<int> m_Direction;
