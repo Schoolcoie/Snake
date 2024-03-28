@@ -41,10 +41,16 @@ void Sprite::Draw(SDL_Renderer* renderer)
 	SDL_RenderCopyEx(renderer, m_Texture, nullptr, m_Rect, 0.0, nullptr, SDL_FLIP_NONE);
 }
 
-void Sprite::SetPosition(float x, float y)
+void Sprite::MovePosition(float x, float y)
 {
 	m_Rect->x = m_Rect->x + x;
 	m_Rect->y = m_Rect->y + y;
+}
+
+void Sprite::SetPosition(float x, float y)
+{
+	m_Rect->x = x;
+	m_Rect->y = y;
 }
 
 float Sprite::GetPositionX()
@@ -55,4 +61,9 @@ float Sprite::GetPositionX()
 float Sprite::GetPositionY()
 {
 	return m_Rect->y;
+}
+
+SDL_Rect* Sprite::GetRect()
+{
+	return m_Rect;
 }

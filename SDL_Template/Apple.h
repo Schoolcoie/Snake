@@ -11,6 +11,8 @@ public:
 	~Apple();
 	pair<float, float> GetPosition();
 	void Draw(SDL_Renderer* graphics);
+	SDL_Rect* GetRect();
+	void Spawn();
 
 private:
 	Sprite* m_Sprite;

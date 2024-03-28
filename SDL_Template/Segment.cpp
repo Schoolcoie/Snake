@@ -22,6 +22,16 @@ vector<int> Segment::GetDirection()
 	return m_Direction;
 }
 
+void Segment::SetDirection(vector<int> direction)
+{
+	m_Direction = direction;
+}
+
+void Segment::MovePosition(float _posx, float _posy)
+{
+	m_Sprite->MovePosition(_posx, _posy);
+}
+
 pair<float, float> Segment::GetPosition()
 {
 	return make_pair(m_Sprite->GetPositionX(), m_Sprite->GetPositionY());

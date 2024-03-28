@@ -12,9 +12,11 @@ public:
 
 	void Draw(SDL_Renderer* renderer);
 
+	void MovePosition(float x, float y);
 	void SetPosition(float x, float y);
 	float GetPositionX();
 	float GetPositionY();
+	SDL_Rect* GetRect();
 
 
 private:

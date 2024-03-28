@@ -14,11 +14,11 @@ int main(int argc, char* argv[])
 	}
 
 	SDL_Window* win = SDL_CreateWindow(
-		"Space Invaders",
+		"Snake",
 		SDL_WINDOWPOS_CENTERED, 
 		SDL_WINDOWPOS_CENTERED,
-		1000,
-		1000,
+		Game::SCREEN_WIDTH,
+		Game::SCREEN_HEIGHT,
 		SDL_WINDOW_UTILITY
 	);
 
@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
 		SDL_SetRenderDrawColor(graphics, 0, 0, 0, 255);
 		SDL_RenderClear(graphics);
 
-		game->Update();
+		game->Update(graphics);
 		game->Draw(graphics);
 
 		// Push back buffer to the front buffer

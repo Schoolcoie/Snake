@@ -14,10 +14,11 @@ public:
     ~Snake();
     void EatApple(SDL_Renderer* graphics);
     pair<float, float> GetPosition();
-    void SetPosition(float _posx, float _posy);
+    void MovePosition(float _posx, float _posy);
     void SetDirection(vector<int> _direction);
     void Update();
     void Draw(SDL_Renderer* graphics);
+    SDL_Rect* GetRect();
 
 
 private:
