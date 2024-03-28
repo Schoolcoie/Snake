@@ -71,13 +71,14 @@ void Snake::Update()
 		if (m_Segments.size() == 0)
 		{
 			m_Segments[i]->SetDirection(m_Direction);
+			
 		}
 		else
 		{
-
+			m_Segments[i]->MovePosition(m_Direction[0], m_Direction[1]);
 		}
 
-		m_Segments[i]->MovePosition(m_Segments[i]->GetDirection()[0], m_Segments[i]->GetDirection()[1]);
+		//m_Segments[i]->MovePosition(m_Segments[i]->GetDirection()[0], m_Segments[i]->GetDirection()[1]);
 	}
 	//Set direction of segments
 	//Move segments
